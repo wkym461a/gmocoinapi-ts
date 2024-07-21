@@ -1,0 +1,7 @@
+/.git
+/node_modules
+/src
+.editorconfig
+.gitignore
+tsconfig.cjs.json
+tsconfig.esm.json
