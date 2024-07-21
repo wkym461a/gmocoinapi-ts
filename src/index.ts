@@ -1,3 +1,1 @@
-export const hello = (): void => {
-  console.log('Hello, world!');
-}
+export * as GMOCoinAPI from './gmo-coin-api';
