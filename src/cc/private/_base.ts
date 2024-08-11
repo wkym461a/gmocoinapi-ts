@@ -1,5 +1,5 @@
 import axios from 'axios';
-import crypto from 'crypto';
+import { createHmac } from 'crypto';
 
 export type Method = 'GET' | 'POST';
 export const EndPoint = 'https://api.coin.z.com/private';
@@ -53,7 +53,7 @@ export const request = async <
   // 認証情報を生成
   const timestamp = Date.now().toString();
   const text = timestamp + req.method + req.path + reqBody;
-  const sign = crypto.createHmac('sha256', keys.secretKey).update(text).digest('hex');
+  const sign = createHmac('sha256', keys.secretKey).update(text).digest('hex');
   const headers = {
     "API-KEY": keys.apiKey,
     "API-TIMESTAMP": timestamp,
