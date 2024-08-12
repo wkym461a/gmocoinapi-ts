@@ -71,10 +71,10 @@ export const request = async <
   // レスポンスに合わせて型を決定し戻り値として返す
   const resData = response.data.data;
   if (resData == null || resData == undefined) {
-    return resData as NoResponse;
+    return response.data as NoResponse;
   }
   if (Object.keys(resData).length <= 0) {
-    return resData as NoResponse;
+    return response.data as NoResponse;
   }
-  return resData as ResponseType;
+  return response.data as ResponseType;
 }

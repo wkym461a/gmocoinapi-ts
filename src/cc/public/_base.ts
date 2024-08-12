@@ -36,6 +36,5 @@ export const request = async <
   const response = await axios.request({ url, method });
 
   // レスポンスを戻り値として返す
-  const resData = response.data.data;
-  return resData as ResponseType;
+  return response.data as ResponseType;
 }
